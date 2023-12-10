@@ -1,0 +1,26 @@
+19:30:46 Server started
+19:30:59 John connected
+19:31:07 Mary connected
+19:31:11 Mary says: 1
+19:31:13 John says: 2
+19:31:19 Mary says: 13
+19:31:23 John says: 24
+19:31:26 Mary says: 131
+19:31:30 John says: 242
+19:31:42 John says: 686
+19:31:49 Mary says: 959
+19:31:51 Server stopped 
+19:32:01 Server started 
+19:32:04 John connected
+19:32:22 Mary connected
+19:32:29 Server stopped 
+19:34:21 Server started 
+19:34:25 Server stopped 
+19:35:02 Server started 
+19:35:15 John connected
+19:35:29 Mary connected
+19:35:35 Server stopped 
+19:35:37 Server started 
+19:35:41 John says: 
+19:35:46 Mary says: 
+19:35:59 Server stopped 

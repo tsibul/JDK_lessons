@@ -63,6 +63,7 @@ public class ClientGui extends JFrame implements ServerLogObserver{
                 serverWindow.setMessage(LocalTime.now().withNano(0) + " " + tfLogin.getText() + " connected");
                 serverWindow.updateServerLog(LocalTime.now().withNano(0) + " " + tfLogin.getText() + " connected");
                 serverWindow.addObserver(ClientGui.this);
+                log.append(serverWindow.getServerLog());
                 log.append(LocalTime.now().withNano(0) + " you have connected successfully \n");
             } else {
                 log.append(LocalTime.now().withNano(0) + " server down \n");

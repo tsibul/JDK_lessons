@@ -2,6 +2,7 @@ package hw1.server;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.*;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class ServerWindow extends JFrame {
 
     private final JButton btnStart = new JButton("Start");
     private final JButton btnStop = new JButton("stop");
+
     private final JTextArea serverLog = new JTextArea();
     private String message;
     private boolean isServerWorking;
@@ -41,6 +43,11 @@ public class ServerWindow extends JFrame {
             observer.updateServerLog(logUpdate);
         }
     }
+
+    public String getServerLog() {
+        return serverLog.getText();
+    }
+
     public ServerWindow(){
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -68,12 +75,35 @@ public class ServerWindow extends JFrame {
             if (isServerWorking) {
                 serverLog.append(LocalTime.now().withNano(0) + " Server stopped \n");
                 observers.clear();
+                try {
+                    FileWriter writer = new FileWriter("serverlog.txt", false);
+                    writer.write(serverLog.getText());
+                    writer.close();
+                    serverLog.setText("");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+
             }
             isServerWorking = false;
         });
         btnStart.addActionListener(e -> {
             if(!isServerWorking){
-            serverLog.append(LocalTime.now().withNano(0) + " Server started \n");
+                try {
+                    FileReader reader = new FileReader("serverlog.txt");
+                    BufferedReader br = new BufferedReader(reader);
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        serverLog.append(line + "\n");
+                    }
+                    br.close();
+
+                } catch (FileNotFoundException ex) {
+                    throw new RuntimeException(ex);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+                serverLog.append(LocalTime.now().withNano(0) + " Server started \n");
             }
             isServerWorking = true;
         });
