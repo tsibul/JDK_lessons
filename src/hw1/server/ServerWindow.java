@@ -29,9 +29,6 @@ public class ServerWindow extends JFrame {
         observers.add(observer);
     }
 
-    public String getMessage() {
-        return message;
-    }
     public boolean isServerWorking() {
         return isServerWorking;
     }
@@ -69,24 +66,18 @@ public class ServerWindow extends JFrame {
         pack();
         setVisible(true);
         isServerWorking = false;
-        btnStop.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (isServerWorking) {
-                    serverLog.append(LocalTime.now().withNano(0) + " Server stopped \n");
-                    observers.clear();
-                }
-                isServerWorking = false;
+        btnStop.addActionListener(e -> {
+            if (isServerWorking) {
+                serverLog.append(LocalTime.now().withNano(0) + " Server stopped \n");
+                observers.clear();
             }
+            isServerWorking = false;
         });
-        btnStart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(!isServerWorking){
-                serverLog.append(LocalTime.now().withNano(0) + " Server started \n");
-                }
-                isServerWorking = true;
+        btnStart.addActionListener(e -> {
+            if(!isServerWorking){
+            serverLog.append(LocalTime.now().withNano(0) + " Server started \n");
             }
+            isServerWorking = true;
         });
     }
 

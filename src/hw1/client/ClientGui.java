@@ -58,36 +58,30 @@ public class ClientGui extends JFrame implements ServerLogObserver{
         setVisible(true);
         btnSend.setVisible(false);
 
-        btnLogin.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (serverWindow.isServerWorking()) {
-                    panelTop.setVisible(false);
-                    btnSend.setVisible(true);
-                    serverWindow.setMessage(LocalTime.now().withNano(0) + " " + tfLogin.getText() + " connected");
-                    serverWindow.updateServerLog(LocalTime.now().withNano(0) + " " + tfLogin.getText() + " connected");
-                    serverWindow.addObserver(ClientGui.this);
-                    log.append(LocalTime.now().withNano(0) + " you have connected successfully \n");
-                } else {
-                    log.append(LocalTime.now().withNano(0) + " server down \n");
-                }
+        btnLogin.addActionListener(e -> {
+            if (serverWindow.isServerWorking()) {
+                panelTop.setVisible(false);
+                btnSend.setVisible(true);
+                serverWindow.setMessage(LocalTime.now().withNano(0) + " " + tfLogin.getText() + " connected");
+                serverWindow.updateServerLog(LocalTime.now().withNano(0) + " " + tfLogin.getText() + " connected");
+                serverWindow.addObserver(ClientGui.this);
+                log.append(LocalTime.now().withNano(0) + " you have connected successfully \n");
+            } else {
+                log.append(LocalTime.now().withNano(0) + " server down \n");
             }
         });
 
-        btnSend.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (serverWindow.isServerWorking()) {
-                    String newMessage = LocalTime.now().withNano(0) + " " + tfLogin.getText() + " says: " +
-                            tfMessage.getText();
-                    serverWindow.setMessage(newMessage);
-                    serverWindow.updateServerLog(newMessage);
-                    log.append(newMessage + "\n");
-                } else {
-                    log.append(LocalTime.now().withNano(0) + " server down \n");
-                    panelTop.setVisible(true);
-                    btnSend.setVisible(false);
-                }
+        btnSend.addActionListener(e -> {
+            if (serverWindow.isServerWorking()) {
+                String newMessage = LocalTime.now().withNano(0) + " " + tfLogin.getText() + " says: " +
+                        tfMessage.getText();
+                serverWindow.setMessage(newMessage);
+                serverWindow.updateServerLog(newMessage);
+                log.append(newMessage + "\n");
+            } else {
+                log.append(LocalTime.now().withNano(0) + " server down \n");
+                panelTop.setVisible(true);
+                btnSend.setVisible(false);
             }
         });
     }
