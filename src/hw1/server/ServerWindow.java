@@ -98,8 +98,6 @@ public class ServerWindow extends JFrame {
                     }
                     br.close();
 
-                } catch (FileNotFoundException ex) {
-                    throw new RuntimeException(ex);
                 } catch (IOException ex) {
                     throw new RuntimeException(ex);
                 }
