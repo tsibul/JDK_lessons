@@ -1,9 +1,5 @@
 package hw3.hw3;
 
-import java.lang.reflect.Array;
-
-import static java.lang.reflect.Array.getLength;
-
 public class CompareArrays {
     public static <T1, T2> boolean compareArrays(T1 [] arr1, T2 [] arr2) {
         int arr1Length = arr1.length;
