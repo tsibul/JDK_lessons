@@ -33,3 +33,13 @@
 01:53:09 Mary disconnected
 01:53:12 John disconnected
 01:53:16 server stopped
+01:58:03 server started
+01:58:06 login connected
+01:58:12 log connected
+01:58:18 log: fff
+01:58:20 login: ggg
+01:58:21 login disconnected
+01:58:25 log disconnected
+01:58:25 server stopped
+01:58:31 server started
+01:58:52 server stopped

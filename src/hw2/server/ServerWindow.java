@@ -2,13 +2,6 @@ package hw2.server;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
 
 
 
@@ -51,9 +44,7 @@ public class ServerWindow extends JFrame {
 
         pack();
         setVisible(true);
-        btnStop.addActionListener(e -> {
-            server.serverStop();
-        });
+        btnStop.addActionListener(e -> server.serverStop());
         btnStart.addActionListener(e -> {
             serverLog.setText("");
             server.serverStart();

@@ -21,9 +21,7 @@ public class Server {
     public boolean connectUser(Client user) {
         if (serverOn) {
             String messageFromServer = LocalTime.now().withNano(0) + " " + user.getName() + " connected";
-            clientList.forEach(client -> {
-                client.answerFromServer(messageFromServer);
-            });
+            clientList.forEach(client -> client.answerFromServer(messageFromServer));
             repo.updateLog(messageFromServer);
             clientList.add(user);
             serverWindow.receiveMessage(messageFromServer);
@@ -35,9 +33,7 @@ public class Server {
     public void disconnectUser(Client user) {
         clientList.remove(user);
         String messageFromServer = LocalTime.now().withNano(0) + " " + user.getName() + " disconnected";
-        clientList.forEach(client -> {
-            client.answerFromServer(messageFromServer);
-        });
+        clientList.forEach(client -> client.answerFromServer(messageFromServer));
         repo.updateLog(messageFromServer);
         serverWindow.receiveMessage(messageFromServer);
     }
@@ -47,9 +43,7 @@ public class Server {
     }
 
     public void sendMessage(String message) {
-        clientList.forEach(client -> {
-            client.answerFromServer(message);
-        });
+        clientList.forEach(client -> client.answerFromServer(message));
         repo.updateLog(message);
         serverWindow.receiveMessage(message);
     }
