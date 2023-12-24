@@ -1,0 +1,35 @@
+01:46:07 server started
+01:46:44 server stopped
+01:46:50 server started
+01:47:46 server started
+01:47:51 server stopped
+01:47:53 server started
+01:47:57 server stopped
+01:48:23 server started
+01:48:25 John connected
+01:48:33 Mary connected
+01:48:45 Mary: Hi
+01:48:52 John: Hallo
+01:49:15 John disconnected
+01:49:15 Mary disconnected
+01:49:15 server stopped
+01:50:24 server started
+01:50:37 John connected
+01:50:55 Mary connected
+01:51:09 Mary: Hi everybody
+01:51:19 John: Hallo, Mary
+01:51:29 Mary: Hi John
+01:51:35 John disconnected
+01:51:53 Mary: Where you?
+01:52:01 Mary: Fuck
+01:52:03 John connected
+01:52:12 John: Sorry
+01:52:21 Mary disconnected
+01:52:25 John disconnected
+01:52:25 server stopped
+01:52:47 server started
+01:52:56 Mary connected
+01:52:58 John connected
+01:53:09 Mary disconnected
+01:53:12 John disconnected
+01:53:16 server stopped
