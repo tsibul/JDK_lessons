@@ -55,8 +55,5 @@ public class Philosopher extends Thread {
         }
         System.out.println(index + " " + name + ": '" + nationality.getMessage("stop") + "' (" + (eatCounter - 1) + ")");
     }
-
-    public HashMap<String, HashMap<String, String>> msg = new HashMap<>();
-
 }
 

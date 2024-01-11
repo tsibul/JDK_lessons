@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PhilLang {
-    private final Map<String, String> MsgEng = new HashMap<String, String>(){{
+    private final Map<String, String> MsgEng = new HashMap<>() {{
         put("thinkStart", "It's time to think");
         put("thinkFinish", "This new theory could be interesting");
         put("lookForFood", "Is there something to eat?");
@@ -13,7 +13,7 @@ public class PhilLang {
         put("stop", "Today's plan fulfilled. It's time to finish");
     }};
 
-    private final Map<String, String> MsgRus = new HashMap<String, String>(){{
+    private final Map<String, String> MsgRus = new HashMap<>() {{
         put("thinkStart", "Жрать нечем, надо чем-то убить время");
         put("thinkFinish", "Что за фигню я придумал?");
         put("lookForFood", "Ироды! Вилки есть?");
@@ -22,7 +22,7 @@ public class PhilLang {
         put("stop", "Чото я объелся, пора баиньки");
     }};
 
-    private final Map<String, String> MsgEll = new HashMap<String, String>(){{
+    private final Map<String, String> MsgEll = new HashMap<>() {{
         put("thinkStart", "Ήρθε η ώρα να σκεφτούμε");
         put("thinkFinish", "Αυτή η νέα θεωρία μπορεί να έχει ενδιαφέρον");
         put("lookForFood", "Υπάρχει κάτι να φάμε?");
@@ -36,7 +36,6 @@ public class PhilLang {
 
     public PhilLang(String nationality) {
         this.nationality = nationality;
-        HashMap<String, String> msg = new HashMap<>();
         if(nationality.equals("rus")){
             this.message = (HashMap<String, String>) MsgRus;
         } else if (nationality.equals("eng")){
