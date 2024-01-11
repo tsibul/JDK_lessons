@@ -1,7 +1,6 @@
 package hw5;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import static hw5.Fork.*;
 
